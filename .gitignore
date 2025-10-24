@@ -1,0 +1,100 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Machine Learning Models
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pt
+models/*.pth
+models/*.onnx
+*.model
+*.weights
+
+# Data (large files)
+data/synthetic_blood_demand.csv
+data/*_demand.csv
+!data/improved_*.csv  # Keep improved datasets
+data/*.json
+data/*.parquet
+*.csv.gz
+
+# Logs
+*.log
+logs/
+*.out
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Temporary files
+*.tmp
+temp/
+tmp/
+*.bak
+*.swp
+
+# Compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# Documentation build
+docs/_build/
+docs/.doctrees/
+
+# Package files
+*.tar.gz
+*.zip
+*.rar
