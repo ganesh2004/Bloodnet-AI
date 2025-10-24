@@ -2,7 +2,7 @@
 
 AI-powered blood demand forecasting and intelligent donor matching system for blood bank operations.
 
-## 🎯 Project Overview
+## Project Overview
 
 BloodNet AI is a comprehensive machine learning system that:
 - **Predicts blood demand** (RBC, Platelet, Plasma) across multiple time horizons
@@ -10,7 +10,7 @@ BloodNet AI is a comprehensive machine learning system that:
 - **Minimizes shortages** while maintaining high prediction accuracy (R² > 0.85)
 - **Optimizes donor outreach** based on compatibility, proximity, and response history
 
-## 🏆 Key Features
+## Key Features
 
 ### 1. Multi-Horizon Demand Prediction
 - **Short-term (1-7 days)**: High-accuracy regression for daily operations
@@ -34,7 +34,7 @@ BloodNet AI is a comprehensive machine learning system that:
 ### 4. Blood Group Disaggregation
 Predicts demand for 8 blood groups: O+, O-, A+, A-, B+, B-, AB+, AB-
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 Bloodnet-AI/
@@ -64,7 +64,7 @@ Bloodnet-AI/
 
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.8+
@@ -119,27 +119,27 @@ python donor_matching.py             # Match donors to demand
 
 Outputs: `ranked_donors.json`
 
-## 📊 Model Performance
+## Model Performance
 
 ### Models Tested
-- ✅ **LightGBM** (selected for RBC, Plasma)
-- ✅ **XGBoost** (selected for Platelet)
-- ✅ RandomForest
-- ⚠️ CNN (decent but computationally expensive)
-- ❌ Prophet (failed - dataset too short)
-- ⚠️ SARIMAX (moderate performance)
+- **LightGBM** (selected for RBC, Plasma)
+- **XGBoost** (selected for Platelet)
+- RandomForest
+- CNN (decent but computationally expensive)
+- Prophet (failed - dataset too short)
+- SARIMAX (moderate performance)
 
 ### Performance Metrics
 
 **Without Buffer** (high accuracy, high undersupply):
-- RBC: R² = 0.97, Undersupply = 61% ❌
-- Platelet: R² = 0.99, Undersupply = 43% ❌
-- Plasma: R² = 0.93, Undersupply = 56% ❌
+- RBC: R² = 0.97, Undersupply = 61%
+- Platelet: R² = 0.99, Undersupply = 43%
+- Plasma: R² = 0.93, Undersupply = 56%
 
 **With Optimal Buffer** (balanced):
-- RBC: R² = 0.86, Undersupply = 2.78% ✅
-- Platelet: R² = 0.86, Undersupply = 0.00% ✅ (Perfect!)
-- Plasma: R² = 0.88, Undersupply = 15.28% ✅
+- RBC: R² = 0.86, Undersupply = 2.78%
+- Platelet: R² = 0.86, Undersupply = 0.00% (Perfect!)
+- Plasma: R² = 0.88, Undersupply = 15.28%
 
 ### Why Buffer Strategy?
 In blood banking, **undersupply is 100-1000× more costly** than oversupply:
@@ -148,7 +148,7 @@ In blood banking, **undersupply is 100-1000× more costly** than oversupply:
 
 We intentionally **overpredict by 5-8%** to prevent critical shortages.
 
-## 🔬 Undersupply Metric
+## Undersupply Metric
 
 **Definition**: Prediction is insufficient when `(prediction + tolerance) < actual`
 
@@ -159,7 +159,7 @@ We intentionally **overpredict by 5-8%** to prevent critical shortages.
 - Patient safety is paramount
 - R² alone doesn't capture operational risk
 
-## 📈 Dataset Features
+## Dataset Features
 
 ### Temporal Features (7)
 - date, day_of_week, week_of_year, month
@@ -176,7 +176,7 @@ We intentionally **overpredict by 5-8%** to prevent critical shortages.
 ### Targets (24)
 - Total demand + 8 blood group disaggregations per component
 
-## 🎓 Methodology
+## Methodology
 
 ### Data Enhancement Process
 1. **Problem**: Initial synthetic data had weak correlations (<0.3)
@@ -196,7 +196,7 @@ rbc_demand =
 
 Weights based on clinical transfusion protocols.
 
-## 🧠 Donor Matching Algorithm
+## Donor Matching Algorithm
 
 ### Scoring Formula (0-100 points):
 - **Blood compatibility**: 40% (exact match vs compatible)
@@ -211,7 +211,7 @@ Weights based on clinical transfusion protocols.
 - Age: 18-65 years
 - Oversampling: 3× (accounts for 30-40% response rate)
 
-## 📚 Documentation
+## Documentation
 
 - **PROJECT_DESCRIPTION.txt**: Comprehensive 55 KB guide covering:
   - Step-by-step data generation
@@ -221,7 +221,7 @@ Weights based on clinical transfusion protocols.
   
 - **IMPROVEMENTS_SUMMARY.md**: Technical correlation improvements
 
-## 🤝 Contributing
+## Contributing
 
 Contributions welcome! Please:
 1. Fork the repository
@@ -229,23 +229,15 @@ Contributions welcome! Please:
 3. Test your changes
 4. Submit a pull request
 
-## 📄 License
+## License
 
-[Add your license here]
+MIT License - See LICENSE file for details
 
-## 👥 Authors
-
-- [Your Name/Team]
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Clinical transfusion protocols based on WHO guidelines
 - Blood type distribution for Indian population
 - Haversine distance for geographic calculations
-
-## 📧 Contact
-
-[Your contact information]
 
 ---
 
